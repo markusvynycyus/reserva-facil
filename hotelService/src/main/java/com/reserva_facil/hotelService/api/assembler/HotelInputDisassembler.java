@@ -15,7 +15,7 @@ public class HotelInputDisassembler {
         return modelMapper.map(hotelInput, Hotel.class);
     }
 
-    public void copyToDomainObject(HotelInput hotelInput, Hotel hotel) {
+    public void copyToDomainObject(Long hotelInput, Hotel hotel) {
         modelMapper.map(hotelInput, hotel);
     }
 }
