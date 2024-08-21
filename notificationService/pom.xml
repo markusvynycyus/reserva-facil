@@ -12,7 +12,8 @@
 	<artifactId>notificationService</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>notificationService</name>
-	<description>Project construindo no Spring Boot Encarregado de enviar notificações para os usuários, confirmando a reserva, check-in, check-out, e outras comunicações relevantes.</description>
+	<description>Microserviço construindo no Spring Boot encarregado de enviar notificações para os usuários,
+		confirmando a reserva, check-in, check-out, e outras comunicações relevantes.</description>
 	<url/>
 	<licenses>
 		<license/>

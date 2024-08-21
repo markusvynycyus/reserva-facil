@@ -12,7 +12,8 @@
 	<artifactId>userService</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>userService</name>
-	<description>Project construindo no Spring Boot responsável pelo gerenciamento de usuários, incluindo autenticação, registro, e gestão de permissões e perfis de usuário.</description>
+	<description>Microserviço construindo no Spring Boot responsável pelo gerenciamento de usuários, incluindo
+		autenticação, registro, e gestão de permissões e perfis de usuário.</description>
 	<url/>
 	<licenses>
 		<license/>

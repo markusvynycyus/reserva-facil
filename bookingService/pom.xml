@@ -12,7 +12,8 @@
 	<artifactId>bookingService</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>bookingService</name>
-	<description>Project construindo no Spring Boot para gerenciar todo o processo de reserva de quartos em um sistema de reserva de hotéis</description>
+	<description>MicroServiço construindo no Spring Boot para gerenciar todo o processo de reserva de quartos em
+		um sistema de reserva de hotéis</description>
 	<url/>
 	<licenses>
 		<license/>
