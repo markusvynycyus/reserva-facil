@@ -16,7 +16,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="bookingService" options="-parameters" />
+      <module name="bookingService" options="-parameters --add-modules java.base" />
       <module name="hotelService" options="-parameters" />
       <module name="notificationService" options="-parameters" />
       <module name="userService" options="-parameters" />
