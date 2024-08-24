@@ -1,13 +1,14 @@
 package com.reserva_facil.hotelService.domain.dto.input;
 
+
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class HotelInput {
+public class RoomInput {
 
-    @NotBlank
-    private String name;
+    private int capacity;
+    private double price;
 }

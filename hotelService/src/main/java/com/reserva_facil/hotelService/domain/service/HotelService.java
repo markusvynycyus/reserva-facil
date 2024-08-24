@@ -25,23 +25,23 @@ public class HotelService {
         return hotelRepository.save(hotel);
     }
 
-    public Hotel buscarOuFalhar(Long HotelId) {
-        return hotelRepository.findById(HotelId)
-                .orElseThrow(() -> new HotelNaoEncontradoException(HotelId));
+    public Hotel buscarOuFalhar(Long hotelId) {
+        return hotelRepository.findById(hotelId)
+                .orElseThrow(() -> new HotelNaoEncontradoException(hotelId));
     }
 
     @Transactional
-    public void excluir(Long HotelId) {
+    public void excluir(Long hotelId) {
         try {
-            hotelRepository.deleteById(HotelId);
+            hotelRepository.deleteById(hotelId);
             hotelRepository.flush();
 
         } catch (EmptyResultDataAccessException e) {
-            throw new HotelNaoEncontradoException(HotelId);
+            throw new HotelNaoEncontradoException(hotelId);
 
         } catch (DataIntegrityViolationException e) {
             throw new EntidadeEmUsoException(
-                    String.format(MSG_HOTEL_EM_USO, HotelId));
+                    String.format(MSG_HOTEL_EM_USO, hotelId));
         }
     }
 
