@@ -1,70 +1,85 @@
-HotelService
-Descrição do Projeto
+# Sistema de Reservas de Hotéis
+# Microserviços para Gerenciamento de Hotéis, Quartos, Amenidades e Notificações
 
-O HotelService é um microserviço desenvolvido para gerenciar hotéis, quartos e amenidades. Ele faz parte de uma arquitetura de microsserviços projetada para um sistema de reservas de hotéis. Este serviço permite a manipulação dos dados relacionados a hotéis, seus quartos e amenidades, incluindo operações de criação, leitura, atualização e exclusão (CRUD).
-Estrutura do Projeto
+<h1 align="center">
 
-O projeto é construído utilizando Spring Boot e segue o padrão de design REST para a criação de APIs. Abaixo, estão as principais entidades e funcionalidades implementadas:
-Entidades
+## Descrição do Projeto
+<p align="left">
+Este projeto é um sistema de microserviços para gerenciamento de reservas de hotéis. O sistema é dividido em vários microserviços responsáveis por diferentes aspectos da gestão de hotéis, incluindo a administração de hotéis, quartos, amenidades e notificações. Cada microserviço expõe uma API RESTful para permitir operações de criação, leitura, atualização e exclusão (CRUD) dos recursos associados.
+</p>
 
-    Hotel: Representa um hotel no sistema.
-    Room (Quarto): Representa os quartos disponíveis em um hotel.
-    Amenity (Amenidade): Representa as comodidades ou facilidades oferecidas por um hotel, como Wi-Fi gratuito, estacionamento, etc.
+## Microserviços
 
-Controllers
+### 1. HotelService
+O `HotelService` é responsável pelo gerenciamento de informações sobre hotéis. Ele permite criar, atualizar, listar e remover hotéis.
+- **Funcionalidades**:
+    - Adicionar, atualizar, listar e remover hotéis.
+    - Relacionar hotéis com amenidades e quartos.
+- **Tecnologias Utilizadas**:
+    - Java 17
+    - Spring Boot
+    - Spring Data JPA
+    - Hibernate
 
-    HotelController: Controlador responsável por gerenciar as operações relacionadas a hotéis..
-    RoomController: Controlador responsável por gerenciar as operações relacionadas a quartos de hotéis.
-    AmenityController: Controlador responsável por gerenciar as operações relacionadas às amenidades oferecidas pelos hotéis.
+### 2. RoomService
+O `RoomService` gerencia os quartos dos hotéis, permitindo a criação, atualização, listagem e exclusão de quartos.
+- **Funcionalidades**:
+    - Adicionar, atualizar, listar e remover quartos dos hotéis.
+    - Associar quartos a hotéis específicos.
+- **Tecnologias Utilizadas**:
+    - Java 17
+    - Spring Boot
+    - Spring Data JPA
+    - Hibernate
 
-Serviços
+### 3. AmenityService
+O `AmenityService` é responsável pela gestão das amenidades oferecidas pelos hotéis, como Wi-Fi gratuito, café da manhã, entre outros.
+- **Funcionalidades**:
+    - Adicionar, atualizar, listar e remover amenidades.
+    - Associar amenidades a hotéis.
+- **Tecnologias Utilizadas**:
+    - Java 17
+    - Spring Boot
+    - Spring Data JPA
+    - Hibernate
 
-    HotelService: Serviço que encapsula a lógica de negócios relacionada aos hotéis.
-    RoomService: Serviço que encapsula a lógica de negócios relacionada aos quartos.
-    AmenityService: Serviço que encapsula a lógica de negócios relacionada às amenidades.
+### 4. NotificationService
+O `NotificationService` é responsável pelo gerenciamento e envio de notificações para os usuários, como confirmações de reserva, lembretes e alertas.
+- **Funcionalidades**:
+    - Enviar notificações por e-mail ou SMS.
+    - Gerenciar templates de notificação e logs de envio.
+- **Tecnologias Utilizadas**:
+    - Java 17
+    - Spring Boot
+    - Spring Messaging
+    - APIs de envio de e-mail e SMS (por exemplo, SendGrid, Twilio)
 
-Repositórios
+## Estrutura do Projeto
 
-    HotelRepository: Interface que define as operações de persistência relacionadas aos hotéis.
-    RoomRepository: Interface que define as operações de persistência relacionadas aos quartos.
-    AmenityRepository: Interface que define as operações de persistência relacionadas às amenidades.
+### Pacotes Principais
+- **Controller**: Gerencia as requisições HTTP para os recursos `Hotel`, `Room`, `Amenity`, e `Notification`.
+- **Service**: Contém as regras de negócio para operações CRUD em `Hotel`, `Room`, `Amenity`, e `Notification`.
+- **Repository**: Interfaces para acesso ao banco de dados usando Spring Data JPA.
+- **DTO**: Objetos para transporte de dados entre camadas.
+- **Exception**: Exceções personalizadas para erros específicos do domínio.
 
-Exceções
+### Classes Principais
+- **Hotel**: Representa um hotel com atributos como nome, localização e descrição.
+- **Room**: Representa um quarto com atributos como número, capacidade e preço.
+- **Amenity**: Representa uma amenidade oferecida pelo hotel, como Wi-Fi gratuito ou café da manhã.
+- **Notification**: Representa uma notificação enviada aos usuários, com atributos como tipo de notificação e conteúdo.
 
-    HotelNaoEncontradoException: Exceção lançada quando um hotel não é encontrado no banco de dados.
-    RoomNaoEncontradoException: Exceção lançada quando um quarto não é encontrado no banco de dados.
-    AmenityNaoEncontradoException: Exceção lançada quando uma amenidade não é encontrada no banco de dados.
-    EntidadeEmUsoException: Exceção lançada quando se tenta remover uma entidade que está em uso.
+## Tecnologias Utilizadas
+- **Java 17**: Linguagem de programação.
+- **Spring Boot**: Framework para desenvolvimento da aplicação.
+- **Spring Data JPA**: Para interação com o banco de dados.
+- **Hibernate**: Implementação JPA utilizada.
+- **Spring Messaging**: Para gerenciamento e envio de mensagens.
+- **Maven**: Ferramenta de gerenciamento de dependências e build.
 
-Como Executar
+## Como Executar
+Para rodar os microserviços, siga os passos abaixo para cada serviço:
 
-    Pré-requisitos: Certifique-se de ter o Java 17 e Maven instalados.
-    Compilar o Projeto: Use o comando mvn clean install para compilar o projeto.
-    Executar o Serviço: Use o comando mvn spring-boot:run para iniciar o serviço.
-
-Endpoints Principais
-
-    Hotéis:
-        GET /api/hoteis: Lista todos os hotéis.
-        GET /api/hoteis/{hotelId}: Busca um hotel por ID.
-        POST /api/hoteis: Cria um novo hotel.
-        PUT /api/hoteis/{hotelId}: Atualiza um hotel existente.
-        DELETE /api/hoteis/{hotelId}: Remove um hotel.
-
-    Quartos:
-        GET /api/rooms: Lista todos os quartos.
-        GET /api/rooms/{roomId}: Busca um quarto por ID.
-        POST /api/rooms: Cria um novo quarto.
-        PUT /api/rooms/{roomId}: Atualiza um quarto existente.
-        DELETE /api/rooms/{roomId}: Remove um quarto.
-
-    Amenidades:
-        GET /api/amenidades: Lista todas as amenidades.
-        GET /api/amenidades/{amenityId}: Busca uma amenidade por ID.
-        POST /api/amenidades: Cria uma nova amenidade.
-        PUT /api/amenidades/{amenityId}: Atualiza uma amenidade existente.
-        DELETE /api/amenidades/{amenityId}: Remove uma amenidade.
-
-Contribuições
-
-Se você deseja contribuir com este projeto, sinta-se à vontade para enviar pull requests ou reportar issues.
+1. Clone o repositório:
+   ```bash
+   git clone <url-do-repositorio>
