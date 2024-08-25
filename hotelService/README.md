@@ -1,5 +1,5 @@
 # Sistema de Reservas de Hotéis
-# Microserviços para Gerenciamento de Hotéis, Quartos, Amenidades e Notificações
+# Microserviços para Gerenciamento de Hotéis, Quartos, Amenidades e Notificações.
 
 <h1 align="center">
 
