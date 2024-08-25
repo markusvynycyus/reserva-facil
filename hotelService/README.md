@@ -13,7 +13,7 @@ Este projeto é um sistema de microserviços para gerenciamento de reservas de h
 ### 1. HotelService
 O `HotelService` é responsável pelo gerenciamento de informações sobre Hotéis. Ele permite criar, atualizar, listar e remover hotéis.
 - **Funcionalidades**:
-    - Adicionar, atualizar, listar e remover hotéis.
+    - Adicionar, atualizar, listar e remover Hotéis.
     - Relacionar hotéis com amenidades e quartos.
 - **Tecnologias Utilizadas**:
     - Java 17
