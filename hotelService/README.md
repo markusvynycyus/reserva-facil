@@ -13,7 +13,7 @@ Entidades
 
 Controllers
 
-    HotelController: Controlador responsável por gerenciar as operações relacionadas a hotéis.
+    HotelController: Controlador responsável por gerenciar as operações relacionadas a hotéis..
     RoomController: Controlador responsável por gerenciar as operações relacionadas a quartos de hotéis.
     AmenityController: Controlador responsável por gerenciar as operações relacionadas às amenidades oferecidas pelos hotéis.
 
