@@ -7,7 +7,7 @@
 O `HotelService` é um microserviço desenvolvido para gerenciar informações de hotéis, incluindo quartos e amenidades. Ele permite operações completas para criação, atualização, listagem e exclusão de hotéis, quartos e amenidades. Este microserviço faz parte de um sistema maior para reservas de hotéis, fornecendo funcionalidades RESTful para a gestão eficiente dos dados dos hotéis.
 </p>
 
-## Funcionalidades
+## Funcionalidades.
 - **Gerenciamento de Hotéis**: Adicionar, atualizar, listar e remover hotéis.
 - **Gerenciamento de Quartos**: Adicionar, atualizar, listar e remover quartos dos hotéis.
 - **Gerenciamento de Amenidades**: Adicionar, atualizar, listar e remover amenidades oferecidas pelos hotéis.
