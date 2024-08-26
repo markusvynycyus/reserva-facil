@@ -5,12 +5,9 @@ import com.reserva_facil.bookingService.api.assembler.BookingModelAssembler;
 import com.reserva_facil.bookingService.domain.exception.BookingNaoEncontradoException;
 import com.reserva_facil.bookingService.domain.exception.RoomNotEncontradoException;
 import com.reserva_facil.bookingService.domain.model.Booking;
-import com.reserva_facil.bookingService.domain.model.Guest;
 import com.reserva_facil.bookingService.domain.model.dto.BookingDTO;
-import com.reserva_facil.bookingService.domain.model.dto.GuestDTO;
 import com.reserva_facil.bookingService.domain.model.input.BookingInput;
 import com.reserva_facil.bookingService.domain.service.BookingService;
-import com.reserva_facil.hotelService.domain.exception.HotelNaoEncontradoException;
 import com.reserva_facil.hotelService.domain.exception.NegocioException;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +28,7 @@ public class BookingController {
 
     @Autowired
     private BookingInputDisassembler bookingInputDisassembler;
+
 
     @GetMapping
     public List<BookingDTO> listar() {
@@ -58,20 +56,7 @@ public class BookingController {
     }
 
 
-    @PutMapping("/{bookingId}")
-    public BookingDTO atualizar(@PathVariable Long bookingId, @RequestBody Long bookingId) {
-        try {
-            Booking bookingAtual = bookingService.buscarOuFalhar(bookingInput);
 
-            bookingInputDisassembler.copyToDomainObject(bookingInput, bookingAtual);
-
-            bookingAtual = bookingService.salvar(bookingAtual);
-
-            return bookingModelAssembler.toModel(bookingAtual);
-        } catch (BookingNaoEncontradoException e) {
-            throw new NegocioException(e.getMessage(), e);
-        }
-    }
 
     @DeleteMapping("/{guestId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
