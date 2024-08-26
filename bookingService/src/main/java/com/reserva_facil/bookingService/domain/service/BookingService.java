@@ -15,6 +15,8 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class BookingService {
 
@@ -56,5 +58,7 @@ public class BookingService {
         return bookingRepository.findById(bookingId)
                 .orElseThrow(() -> new BookingNaoEncontradoException(bookingId));
     }
+
+
 
 }

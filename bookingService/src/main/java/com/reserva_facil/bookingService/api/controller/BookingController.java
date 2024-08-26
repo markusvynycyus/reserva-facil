@@ -10,6 +10,7 @@ import com.reserva_facil.bookingService.domain.model.input.BookingInput;
 import com.reserva_facil.bookingService.domain.service.BookingService;
 import com.reserva_facil.hotelService.domain.exception.NegocioException;
 import jakarta.validation.Valid;
+import org.aspectj.weaver.ast.Literal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -32,9 +33,11 @@ public class BookingController {
 
     @GetMapping
     public List<BookingDTO> listar() {
-        List<Booking> bookings = bookingService.findAll();  // Assumindo que você tenha um método findAll na BookingService
+        List<Booking> bookings = bookingService.findAll();
         return bookingModelAssembler.toCollectionModel(bookings);
     }
+
+
 
     @GetMapping("/{bookingId}")
     public BookingDTO buscar(@PathVariable Long bookingId) {
