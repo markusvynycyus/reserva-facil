@@ -2,12 +2,12 @@ package com.reserva_facil.bookingService.api.controller;
 
 import com.reserva_facil.bookingService.api.assembler.GuestInputDisassembler;
 import com.reserva_facil.bookingService.api.assembler.GuestModelAssembler;
+import com.reserva_facil.bookingService.domain.exception.BookingNaoEncontradoException;
 import com.reserva_facil.bookingService.domain.model.Guest;
 import com.reserva_facil.bookingService.domain.model.dto.GuestDTO;
 import com.reserva_facil.bookingService.domain.model.input.GuestInput;
 import com.reserva_facil.bookingService.domain.repository.GuestRepository;
 import com.reserva_facil.bookingService.domain.service.GuestService;
-import com.reserva_facil.hotelService.domain.exception.HotelNaoEncontradoException;
 import com.reserva_facil.hotelService.domain.exception.NegocioException;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -64,7 +64,7 @@ public class GuestController {
             guestAtual = guestService.salvar(guestAtual);
 
             return guestModelAssembler.toModel(guestAtual);
-        } catch (HotelNaoEncontradoException e) {
+        } catch (BookingNaoEncontradoException e) {
             throw new NegocioException(e.getMessage(), e);
         }
     }

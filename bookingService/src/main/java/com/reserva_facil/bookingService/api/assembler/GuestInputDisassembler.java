@@ -2,8 +2,7 @@ package com.reserva_facil.bookingService.api.assembler;
 
 import com.reserva_facil.bookingService.domain.model.Guest;
 import com.reserva_facil.bookingService.domain.model.input.GuestInput;
-import com.reserva_facil.hotelService.domain.dto.input.RoomInput;
-import com.reserva_facil.hotelService.domain.model.Room;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
