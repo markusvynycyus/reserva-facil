@@ -5,6 +5,8 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import java.time.LocalDateTime;
+
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
@@ -23,9 +25,13 @@ public class Notification {
     @Column(nullable = false)
     private String message;    // Conteúdo da notificação
 
-    @NotBlank
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private String channel;    // Canal de envio (e.g., EMAIL, SMS, PUSH)
+    private NotificationChannel channel;    // Canal de envio (e.g., EMAIL, SMS, PUSH)
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private NotificationStatus status; // Status da notificação (e.g., PENDING, SENT, FAILED
 
     private LocalDateTime sentAt; // Data e hora do envio
 
