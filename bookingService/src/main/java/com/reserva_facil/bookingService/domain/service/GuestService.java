@@ -5,8 +5,6 @@ import com.reserva_facil.bookingService.domain.model.Guest;
 import com.reserva_facil.bookingService.domain.repository.GuestRepository;
 import com.reserva_facil.hotelService.domain.exception.EntidadeEmUsoException;
 import com.reserva_facil.hotelService.domain.exception.RoomNaoEncontradoException;
-import com.reserva_facil.hotelService.domain.model.Room;
-import com.reserva_facil.hotelService.domain.repository.RoomRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -47,7 +45,5 @@ public class GuestService {
                     String.format(MSG_GUEST_EM_USO, guestId));
         }
     }
-
-
 
 }

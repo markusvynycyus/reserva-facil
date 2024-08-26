@@ -77,5 +77,4 @@ public class HotelController {
         hotelService.excluir(hotelId);
     }
 
-
 }
