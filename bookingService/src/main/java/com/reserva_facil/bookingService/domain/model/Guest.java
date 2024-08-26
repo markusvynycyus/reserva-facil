@@ -1,9 +1,12 @@
 package com.reserva_facil.bookingService.domain.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import jakarta.validation.constraints.NotBlank;
+
+import java.util.Set;
 
 
 @Data
@@ -24,7 +27,12 @@ public class Guest {
     @Column(nullable = false)
     private String lastName;
 
+    @Email
     @NotBlank
     @Column(nullable = false)
     private String email;
+
+    @OneToMany
+    private Set<Booking> bookings;
+
 }
